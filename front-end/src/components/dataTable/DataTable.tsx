@@ -4,7 +4,6 @@ import {
   DataGrid,
   GridColDef,
   GridToolbar,
-  GridValueGetterParams,
 } from "@mui/x-data-grid";
 import { useMutation, useQueryClient } from "react-query";
 
@@ -125,7 +124,7 @@ const DataTable = (props: Props) => {
           <Link to={`/${props.slug}/${param.row.id}`}>
             <img src="/view.svg" alt="" />
           </Link>
-          <div className="delete" onClick={(e) => handleDelete(param.row.id)}>
+          <div className="delete" onClick={() => handleDelete(param.row.id)}>
             <img src="/delete.svg" alt="" className="" />
           </div>
         </div>

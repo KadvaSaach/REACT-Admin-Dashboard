@@ -9,7 +9,7 @@ import Menu from "./components/menu/Menu";
 import "./styles/global.scss";
 import User from "./pages/user/User";
 import Product from "./pages/product/Product";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const queryClient = new QueryClient();
 
