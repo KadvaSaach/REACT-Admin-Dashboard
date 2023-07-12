@@ -6,6 +6,7 @@ import {
   GridToolbar,
   GridValueGetterParams,
 } from "@mui/x-data-grid";
+import { useMutation, useQueryClient } from "react-query";
 
 type Props = {
   columns: GridColDef[];
@@ -92,9 +93,25 @@ const DataTable = (props: Props) => {
   //     { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
   //   ];
 
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: (id: number) => {
+      return fetch(`http://localhost:8800/api/${props.slug}/${id}`, {
+        method: "delete",
+      });
+    },
+    onSuccess: ()=>{
+      queryClient.invalidateQueries([`all${props.slug}`])
+    }
+  });
+
   const handleDelete = (id: number) => {
     // delete the item
     // axios.delete(`/api/${slug}/id`)
+
+    mutation.mutate(id)
+
     console.log(id + " has been deleted");
   };
 

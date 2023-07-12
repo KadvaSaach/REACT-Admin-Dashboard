@@ -70,7 +70,9 @@ const BigChartBox = () => {
           >
             <XAxis dataKey="name" />
             <YAxis />
-            <Tooltip />
+            <Tooltip
+              contentStyle={{ background: "#2a3447", borderRadius: "5px" }}
+            />
             <Area
               type="monotone"
               dataKey="electronic"

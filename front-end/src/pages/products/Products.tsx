@@ -1,11 +1,9 @@
 import { useState } from "react";
 import Add from "../../components/add/Add";
 import DataTable from "../../components/dataTable/DataTable";
-import "./producats.scss";
+import "./products.scss";
 import { GridColDef } from "@mui/x-data-grid";
 import { products } from "../../data";
-
-
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 90 },
@@ -54,7 +52,6 @@ const columns: GridColDef[] = [
     type: "boolean",
   },
 ];
-
 
 const Producats = () => {
   const [open, setOpen] = useState(false);
